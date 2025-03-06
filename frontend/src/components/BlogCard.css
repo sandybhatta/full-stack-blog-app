@@ -1,0 +1,129 @@
+/* BlogCard.css */
+
+/* Basic styles for the blog card container */
+.blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .blog-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  /* Header with blog title and author info */
+  .blog-card-header {
+    margin-bottom: 15px;
+  }
+  
+  .blog-card-header h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .blog-card-header .author {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* Truncated content preview */
+  .blog-card-content {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .blog-card-content p {
+    margin: 0;
+  }
+  
+  /* Footer area with like, comment, and share buttons */
+  .blog-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .blog-card-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Button styles */
+  .blog-card-actions button {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-card-actions button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .blog-card-actions button.liked {
+    color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .blog-card-actions button.liked:hover {
+    background-color: #e6f2ff;
+  }
+  
+  /* Icon styles inside buttons */
+  .blog-card-actions button svg {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Read more button */
+  .read-more-btn {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .read-more-btn:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  /* Optional: Add responsiveness for mobile */
+  @media (max-width: 768px) {
+    .blog-card {
+      padding: 15px;
+    }
+  
+    .blog-card-header h3 {
+      font-size: 1.5rem;
+    }
+  
+    .blog-card-actions button {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .blog-card-actions button svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  

@@ -1,0 +1,41 @@
+/* BlogFeedPage.css */
+
+/* Styling the container of the blog feed */
+.blog-feed-container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .feed-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .no-blogs {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  .loading-text {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+  }
+  
+  .error-text {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #e74c3c;
+  }
+  

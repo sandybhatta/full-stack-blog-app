@@ -1,0 +1,34 @@
+/* /styles/ProfilePage.css */
+
+.container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  p.no-blogs {
+    color: #777;
+  }
+  
