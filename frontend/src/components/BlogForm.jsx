@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBlog } from '../features/blogSlice';  // Assuming addBlog is your action to create a blog
+import { addBlog } from '../features/blogSlice';  
 import { useNavigate } from 'react-router-dom';
 import './BlogForm.css';
 
@@ -14,7 +14,7 @@ const BlogForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { loading, error: blogError } = useSelector((state) => state.blogs);  // Get loading and error from Redux
+  const { loading, error: blogError } = useSelector((state) => state.blogs);  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,15 +32,14 @@ const BlogForm = () => {
     };
 
     try {
-      // Dispatch the createBlog action
       await dispatch(addBlog(blogData));
 
-      // Check if the action was successful (i.e., the Redux state is updated)
+      
       if (!blogError) {
-        navigate('/');  // Redirect to homepage after successful blog creation
+        navigate('/');  
       }
     } catch (err) {
-      // Handle errors from Redux action if needed
+      
       setError(blogError || 'Failed to create blog');
     }
   };

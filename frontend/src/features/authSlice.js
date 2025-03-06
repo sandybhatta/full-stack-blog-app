@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 
 
-// Thunk to check authentication status
+
 export const checkAuth = createAsyncThunk(
   'auth/checkAuth',
   async (_, { rejectWithValue }) => {
@@ -10,10 +10,10 @@ export const checkAuth = createAsyncThunk(
     if (!token) return rejectWithValue('No token found');
 
     try {
-      // Make a request to your backend to check the token using the /profile route
+      
       const response = await fetch('http://localhost:4000/api/auth/profile', {
         headers: {
-          Authorization: `Bearer ${token}`, // Send token for authentication
+          Authorization: `Bearer ${token}`, 
         },
       });
 
@@ -22,9 +22,9 @@ export const checkAuth = createAsyncThunk(
       }
 
       const data = await response.json();
-      return { user: data, token, blogs: data.blogs }; // Ensure that only user blogs are returned
+      return { user: data, token, blogs: data.blogs }; 
     } catch (error) {
-      return rejectWithValue(error.message); // Return error message if authentication fails
+      return rejectWithValue(error.message); 
     }
   }
 );
@@ -35,22 +35,22 @@ const authSlice = createSlice({
   initialState: {
     user: null,
     token: null,
-    blogs: [], // Add blogs to the initial state
+    blogs: [],
     loading: false,
     error: null,
   },
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload.user;
-      state.token = action.payload.token; // Set the token in the Redux state
+      state.token = action.payload.token; 
       state.loading = false;
-      localStorage.setItem('token', action.payload.token); // Save token to localStorage
+      localStorage.setItem('token', action.payload.token); 
     },
     clearUser: (state) => {
       state.user = null;
-      state.token = null; // Clear the token
+      state.token = null; 
       state.loading = false;
-      localStorage.removeItem('token'); // Remove the token from localStorage
+      localStorage.removeItem('token'); 
     },
     setLoading: (state) => {
       state.loading = true;
@@ -66,9 +66,9 @@ const authSlice = createSlice({
         state.loading = true;
       })
       .addCase(checkAuth.fulfilled, (state, action) => {
-        state.user = action.payload.user; // Store user data
-        state.token = action.payload.token; // Store token
-        state.blogs = action.payload.blogs; // Store only the user's blogs
+        state.user = action.payload.user; 
+        state.token = action.payload.token; 
+        state.blogs = action.payload.blogs; 
         state.loading = false;
       })
       .addCase(checkAuth.rejected, (state, action) => {

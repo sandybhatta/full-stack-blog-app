@@ -1,4 +1,4 @@
-// src/components/BlogList.js
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBlogs } from '../features/blogSlice';
@@ -10,7 +10,7 @@ const BlogList = () => {
   const { blogs, loading, error } = useSelector((state) => state.blogs);
 
   useEffect(() => {
-    dispatch(fetchBlogs()); // Fetch blogs when the component mounts
+    dispatch(fetchBlogs()); 
   }, [dispatch]);
 
   if (loading) {

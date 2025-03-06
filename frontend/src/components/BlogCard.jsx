@@ -48,7 +48,7 @@ const BlogCard = ({ blog }) => {
   };
 
   const handleComment = () => {
-    setShowComments((prev) => !prev); // Toggle comment section visibility
+    setShowComments((prev) => !prev); 
   };
 
   const handleShare = () => {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { shareBlogAction } from '../features/blogSlice'; // Assuming you have a shareBlog action
+import { shareBlogAction } from '../features/blogSlice'; 
 import './ShareButton.css';
 
 const ShareButton = ({ blogId }) => {
   const dispatch = useDispatch();
 
   const handleShare = () => {
-    dispatch(shareBlogAction({ blogId })); // Dispatch the shareBlog action
+    dispatch(shareBlogAction({ blogId }));
   };
 
   return (

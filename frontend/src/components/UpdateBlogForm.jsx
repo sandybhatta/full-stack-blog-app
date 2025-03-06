@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateBlog } from '../features/blogSlice'; // Assuming you have an updateBlog action
+import { updateBlog } from '../features/blogSlice'; 
 import './UpdateBlogForm.css';
 
 const UpdateBlogForm = ({ blogData, onClose }) => {
@@ -16,8 +16,8 @@ const UpdateBlogForm = ({ blogData, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedBlog = { ...blogData, title, content };
-    dispatch(updateBlog(updatedBlog)); // Dispatch the updateBlog action
-    onClose(); // Close the form after submission
+    dispatch(updateBlog(updatedBlog)); 
+    onClose();
   };
 
   return (

@@ -1,45 +1,45 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  fetchUserBlogs } from "../features/blogSlice"; // Import fetchUserBlogs
-import {  checkAuth, } from "../features/authSlice"; // Import fetchUserBlogs
-import { deleteBlogAction } from "../features/blogSlice"; // Delete action
+import {  fetchUserBlogs } from "../features/blogSlice"; 
+import {  checkAuth, } from "../features/authSlice"; 
+import { deleteBlogAction } from "../features/blogSlice";
 import { useNavigate } from "react-router-dom";
-import "../assets/styles/ProfilePage.css"; // Profile page styling
+import "../assets/styles/ProfilePage.css"; 
 
 const Profile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.user); // Get user from Redux store
-  const blogs = useSelector((state) => state.auth.blogs); // Get blogs from auth state
-  const { loading, error } = useSelector((state) => state.auth); // Get loading & error state for auth
+  const user = useSelector((state) => state.auth.user); 
+  const blogs = useSelector((state) => state.auth.blogs); 
+  const { loading, error } = useSelector((state) => state.auth); 
 
-  // Fetch user data and user blogs when the component mounts
+  
   useEffect(() => {
     if (!user) {
-      dispatch(checkAuth()); // Check authentication
+      dispatch(checkAuth()); 
     }
     if (user) {
-      dispatch(fetchUserBlogs()); // Fetch user-specific blogs
+      dispatch(fetchUserBlogs()); 
     }
   }, [dispatch, user]);
 
-  // Redirect to login if the user is not authenticated
+ 
   useEffect(() => {
     if (!user || !user.email) {
       navigate("/signin");
     }
   }, [user, navigate]);
 
-  // Handle blog deletion
+  
   const handleDelete = async (blogId) => {
      dispatch(deleteBlogAction(blogId));
-      // Dispatch delete action
+      
      dispatch(checkAuth())
 
-    dispatch(fetchUserBlogs()); // Fetch updated blogs after delete
+    dispatch(fetchUserBlogs());
   };
 
-  // Handle blog update (navigate to update page)
+  
   const handleUpdate = (blogId) => {
     navigate(`/blogs/update/${blogId}`);
   };

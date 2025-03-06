@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(clearUser());
-    navigate('/signin'); // Redirect to login after logout
+    navigate('/signin'); 
   };
 
   return (
@@ -22,18 +22,18 @@ const Navbar = () => {
         </Link>
         <ul className="nav-links">
           <li>
-            <Link to="/">Home</Link> {/* Home route */}
+            <Link to="/">Home</Link> 
           </li>
           {user ? (
             <>
               <li>
-                <Link to="/profile">Profile</Link> {/* Profile route */}
+                <Link to="/profile">Profile</Link> 
               </li>
               <li>
-                <Link to="/blogs">Blog Feed</Link> {/* Blog Feed route */}
+                <Link to="/blogs">Blog Feed</Link> 
               </li>
               <li>
-                <Link to="/blogs/create">Create Blog</Link> {/* Create Blog route */}
+                <Link to="/blogs/create">Create Blog</Link> 
               </li>
               <li>
                 <button className="logout-btn" onClick={handleLogout}>

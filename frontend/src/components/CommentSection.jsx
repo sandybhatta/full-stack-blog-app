@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { commentOnBlogAction } from '../features/blogSlice';
 
-const CommentSection = ({ blogId, comments = [] }) => {  // Default to empty array if no comments are passed
+const CommentSection = ({ blogId, comments = [] }) => {  
   const [newComment, setNewComment] = useState('');
   const dispatch = useDispatch();
 
@@ -15,9 +15,9 @@ const CommentSection = ({ blogId, comments = [] }) => {  // Default to empty arr
         createdAt: new Date().toISOString(),
       };
 
-      // Dispatch action to add comment to the blog
+     
       dispatch(commentOnBlogAction({ blogId, commentData }));
-      setNewComment('');  // Reset the textarea after submitting the comment
+      setNewComment(''); 
     }
   };
 
@@ -36,7 +36,7 @@ const CommentSection = ({ blogId, comments = [] }) => {  // Default to empty arr
         )}
       </div>
 
-      {/* Comment Form */}
+      
       <form onSubmit={handleCommentSubmit}>
         <textarea
           value={newComment}
